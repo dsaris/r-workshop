@@ -5,8 +5,33 @@ date: "20 September 2020"
 output: html_document
 ---
 
-# Plots with ggplot2
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
 
-We are going to make plots in R and it's going to be amazing.
+```{r include=FALSE}
+library(tidyverse)
+library(readxl)
+library(here)
+library (ggplot2)
+```
+
+```{r include=FALSE}
+ca_np <- read_csv(here("data", "ca_np.csv"))
+ci_np <- read_excel(here("data", "ci_np.xlsx"))
+
+```
+```{r include=FALSE}
+ggplot(data = ci_np, aes(x = year, y = visitors)) +
+  geom_line()
+```
+
+
+
+
+
+
+
+
 
 

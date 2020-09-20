@@ -26,6 +26,11 @@ ggplot(data = ci_np, aes(x = year, y = visitors)) +
   geom_line()
 ```
 
+```{r include=FALSE}
+gg_base <- ggplot(data = ci_np, aes(x = year, y = visitors))
+gg_base +
+  geom_point()
+```
 
 
 

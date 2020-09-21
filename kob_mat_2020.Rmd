@@ -1,0 +1,56 @@
+---
+title: "Tabel Kob material 2020"
+author: "Aris Warsito"
+date: "21 September 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r grafik, echo=FALSE}
+library(tidyverse)
+library(readxl)
+library(here)
+library (ggplot2)
+#Membaca file csv dan xls
+ca_np <- read_csv(here("data", "ca_np.csv"))
+ci_np <- read_excel(here("data", "ci_np.xlsx"))
+
+#membuat grafik line
+ggplot(data = ci_np, aes(x = year, y = visitors)) +
+  geom_line()
+#membuat grafik geom point
+gg_base <- ggplot(data = ci_np, aes(x = year, y = visitors))
+gg_base +
+  geom_point()
+
+
+
+
+```
+
+
+
+
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
